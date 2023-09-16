@@ -1,9 +1,9 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 import { Metadata } from "next";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Work_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
