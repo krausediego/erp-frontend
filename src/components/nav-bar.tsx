@@ -4,6 +4,7 @@ import dynamicIconImports from "lucide-react/dynamicIconImports";
 import { Icon } from "./ui/icon";
 import { NavBarItem } from "./nav-bar-item";
 import { usePathname } from "next/navigation";
+import { SwitchTheme } from "./switch-theme";
 
 interface MenuItemsProps {
   route?: {
@@ -99,7 +100,7 @@ export function NavBar() {
   const pathName = usePathname();
 
   return (
-    <div className="w-60 h-screen flex justify-center border-r-2 bg-[#1A1D39]">
+    <div className="w-72 py-4 h-screen flex flex-col items-center justify-between border-r-2 bg-secondary">
       <div className="flex flex-col w-full gap-2">
         {MenuItems.map(({ route, category }, index) => {
           return (
@@ -124,6 +125,7 @@ export function NavBar() {
           );
         })}
       </div>
+      <SwitchTheme />
     </div>
   );
 }
