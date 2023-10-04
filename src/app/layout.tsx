@@ -2,6 +2,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 import { Work_Sans } from "next/font/google";
 import { Metadata } from "next";
+import { Providers } from "@/utils/providers";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Work_Sans({ subsets: ["latin"] });
 
@@ -20,9 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          {children}
-        </ThemeProvider>
+        <Providers>
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+            {children}
+          </ThemeProvider>
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );
